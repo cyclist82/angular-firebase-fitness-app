@@ -3,7 +3,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatCheckboxModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import {
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatListModule,
+    MatNativeDateModule,
+    MatSidenavModule,
+    MatToolbarModule
+} from '@angular/material';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -14,6 +22,10 @@ import {MatCheckboxModule, MatDatepickerModule, MatNativeDateModule} from '@angu
         MatDatepickerModule,
         MatNativeDateModule,
         MatCheckboxModule,
+        ReactiveFormsModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatListModule,
     ], exports: [
         MatButtonModule,
         MatIconModule,
@@ -22,6 +34,10 @@ import {MatCheckboxModule, MatDatepickerModule, MatNativeDateModule} from '@angu
         MatDatepickerModule,
         MatNativeDateModule,
         MatCheckboxModule,
+        ReactiveFormsModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatListModule,
     ]
 })
 export class MaterialModule {
