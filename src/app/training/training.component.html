@@ -1,3 +1,25 @@
-<p>
-  training works!
-</p>
+<ng-container *ngIf="!ongoingTraining">
+    <nav mat-tab-nav-bar mat-align-tabs="center">
+        <a
+            mat-tab-link
+            routerLink="newTraining"
+            routerLinkActive
+            #newTraining="routerLinkActive"
+            [active]="newTraining.isActive"
+            >Neues Training
+        </a>
+        <a
+            mat-tab-link
+            routerLink="pastTraining"
+            routerLinkActive
+            #pastTraining="routerLinkActive"
+            [active]="pastTraining.isActive"
+            >Vergangenes Training
+        </a>
+    </nav>
+    <router-outlet></router-outlet>
+</ng-container>
+<app-current-training
+    *ngIf="ongoingTraining"
+    (trainingExit)="exitTraining()"
+></app-current-training>
