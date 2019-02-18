@@ -14,7 +14,7 @@
                 <a routerLink="/login">Login</a>
             </li>
             <li>
-                <a routerLink="/training">Training</a>
+                <a [routerLink]="ongoingTraining?'/training':'/training/newTraining'">Training</a>
             </li>
             <li>
                 <a>Logout</a>

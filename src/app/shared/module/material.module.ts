@@ -1,14 +1,15 @@
-import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import {NgModule} from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {
+    MatCardModule,
     MatCheckboxModule,
-    MatDatepickerModule,
+    MatDatepickerModule, MatDialogModule,
     MatListModule,
-    MatNativeDateModule,
-    MatSidenavModule,
+    MatNativeDateModule, MatProgressSpinnerModule, MatSelectModule,
+    MatSidenavModule, MatTabsModule,
     MatToolbarModule
 } from '@angular/material';
 import {ReactiveFormsModule} from '@angular/forms';
@@ -26,6 +27,11 @@ import {ReactiveFormsModule} from '@angular/forms';
         MatSidenavModule,
         MatToolbarModule,
         MatListModule,
+        MatTabsModule,
+        MatCardModule,
+        MatSelectModule,
+        MatProgressSpinnerModule,
+        MatDialogModule,
     ], exports: [
         MatButtonModule,
         MatIconModule,
@@ -38,6 +44,11 @@ import {ReactiveFormsModule} from '@angular/forms';
         MatSidenavModule,
         MatToolbarModule,
         MatListModule,
+        MatTabsModule,
+        MatCardModule,
+        MatSelectModule,
+        MatProgressSpinnerModule,
+        MatDialogModule,
     ]
 })
 export class MaterialModule {
