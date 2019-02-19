@@ -7,18 +7,25 @@
     <div><a routerLink="/welcome">LOGO</a></div>
     <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
         <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-            <li>
-                <a routerLink="/signup">Registrieren</a>
-            </li>
-            <li>
-                <a routerLink="/login">Login</a>
-            </li>
-            <li>
-                <a [routerLink]="ongoingTraining?'/training':'/training/newTraining'">Training</a>
-            </li>
-            <li>
-                <a>Logout</a>
-            </li>
+            <ng-container *ngIf="!isAuth">
+                <li>
+                    <a routerLink="/signup">Registrieren</a>
+                </li>
+                <li>
+                    <a routerLink="/login">Login</a>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="isAuth">
+                <li>
+                    <a [routerLink]="ongoingTraining ? '/training'
+                                : '/training/newTraining'"
+                    >Training</a
+                    >
+                </li>
+                <li>
+                    <a style="cursor:pointer" (click)="onLogout()">Logout</a>
+                </li>
+            </ng-container>
         </ul>
     </div>
 </mat-toolbar>

@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,aAAa,CAAA;EACT,OAAO,EAAE,iBAAiB;CAC7B",
-    "sources": [
-        "new-training.component.scss"
-    ],
-    "names": [],
-    "file": "new-training.component.css"
-}

@@ -1,5 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -18,6 +18,8 @@ import {SidenavListComponent} from './navigation/sidenav-list/sidenav-list.compo
 import {NewTrainingComponent} from './training/new-training/new-training.component';
 import {TrainingRoutingModule} from './training/training-routing.module';
 import {StopTrainingComponent} from './training/current-training/stop-training.component';
+import {AuthService} from './auth/auth.service';
+import {TrainingService} from './training/training.service';
 
 @NgModule({
     declarations: [
@@ -31,7 +33,7 @@ import {StopTrainingComponent} from './training/current-training/stop-training.c
         HeaderComponent,
         SidenavListComponent,
         NewTrainingComponent,
-        StopTrainingComponent,
+        StopTrainingComponent
     ],
     imports: [
         BrowserModule,
@@ -42,9 +44,10 @@ import {StopTrainingComponent} from './training/current-training/stop-training.c
         FlexLayoutModule,
         TrainingRoutingModule,
     ],
-    providers: [],
+    providers: [AuthService, TrainingService],
     bootstrap: [AppComponent],
     entryComponents: [StopTrainingComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {
 }

@@ -6,7 +6,7 @@
             routerLinkActive
             #newTraining="routerLinkActive"
             [active]="newTraining.isActive"
-            >Neues Training
+        >Neues Training
         </a>
         <a
             mat-tab-link
@@ -14,12 +14,11 @@
             routerLinkActive
             #pastTraining="routerLinkActive"
             [active]="pastTraining.isActive"
-            >Vergangenes Training
+        >Vergangenes Training
         </a>
     </nav>
-    <router-outlet></router-outlet>
+        <router-outlet></router-outlet>
 </ng-container>
 <app-current-training
     *ngIf="ongoingTraining"
-    (trainingExit)="exitTraining()"
 ></app-current-training>
