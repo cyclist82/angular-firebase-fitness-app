@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,CAAC,CAAC;EACE,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,KAAK;CAMf;;AARD,AAII,CAJH,AAII,OAAO,EAJZ,CAAC,AAKI,MAAM,CAAA;EACH,KAAK,EAAE,SAAS;CACnB;;AAGL,AAAA,YAAY,CAAA;EACR,OAAO,EAAE,YAAY;EACrB,YAAY,EAAE,GAAG;CACpB",
-    "sources": [
-        "sidenav-list.component.scss"
-    ],
-    "names": [],
-    "file": "sidenav-list.component.css"
-}

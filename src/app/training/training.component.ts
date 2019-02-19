@@ -1,28 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { TrainingService } from './training.service';
-import { Router } from '@angular/router';
+import {Component, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@angular/core';
+import {TrainingService} from './training.service';
+import {Router} from '@angular/router';
+import {Subscription} from 'rxjs';
+import {Exercise} from './exercise.model';
 
 @Component({
     selector: 'app-training',
     templateUrl: './training.component.html',
     styleUrls: ['./training.component.scss']
 })
-export class TrainingComponent implements OnInit {
+export class TrainingComponent implements OnInit, OnDestroy {
+
     ongoingTraining = false;
+    exerciseSubscription: Subscription;
 
     constructor(
-        private traingingService: TrainingService,
-        private router: Router
-    ) {}
+        private trainingService: TrainingService
+    ) {
+    }
 
     ngOnInit() {
-        this.traingingService.ongoingTraining$.subscribe(
-            ongoing => {
-                this.ongoingTraining = ongoing;
-                if (ongoing) {
-                    this.router.navigate(['/training']);
+        this.exerciseSubscription = this.trainingService.exerciseChanged.subscribe(
+            (exercise: Exercise) => {
+                if (exercise) {
+                    this.ongoingTraining = true;
                 } else {
-                    this.router.navigate(['/training/newTraining']);
+                    this.ongoingTraining = false;
                 }
             },
             error => {
@@ -31,7 +34,9 @@ export class TrainingComponent implements OnInit {
         );
     }
 
-    exitTraining() {
-        this.traingingService.ongoingTraining$.next(false);
+    ngOnDestroy(): void {
+        this.exerciseSubscription.unsubscribe();
     }
+
+
 }
